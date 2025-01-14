@@ -1,0 +1,324 @@
+### 7-Day Plan to Review the Full Stack JavaScript Path
+
+---
+To quickly review your knowledge of the Full Stack JavaScript path, you can create a focused plan:
+Day 1: JavaScript Fundamentals
+    • Review core concepts: Scope, closures, promises, async/await.
+    • Practice exercises: Work through problems on platforms like LeetCode or CodeWars.
+    • Revisit: Key DOM manipulation methods and event handling.
+Day 2: Frontend Basics (HTML/CSS/JavaScript)
+    • Rebuild a simple project: Clone a static webpage or a small interactive app.
+    • Focus on CSS Grid/Flexbox: Review responsive design techniques.
+    • Test your JS: Add interactivity to static HTML/CSS projects.
+Day 3: React
+    • Key concepts: Props, state, lifecycle, hooks (useState, useEffect).
+    • Build a small app: Todo app, counter, or a weather widget using an API.
+    • Check advanced topics: Context API and React Router.
+Day 4: Node.js and Express
+    • Review basics: Routing, middleware, request/response cycle.
+    • Work on APIs: Create or test a small REST API.
+    • Experiment: Use Postman or cURL for endpoint testing.
+Day 5: Databases
+    • Review database models: Relational vs. non-relational.
+    • Revisit: Prisma or other ORMs you used.
+    • Practice queries: Write CRUD operations in SQL and with your chosen ORM.
+Day 6: Deployment and Tools
+    • Revisit: Setting up a server on Heroku, Netlify, or Vercel.
+    • Review Git/GitHub: Practice common commands, branching, and pull requests.
+    • Set up pipelines: If you learned CI/CD, review tools like GitHub Actions.
+Day 7: Integrative Project
+    • Pick a challenge: Rebuild a small-to-medium project from The Odin Project.
+    • Focus on testing: Write unit tests for key components.
+    • Evaluate: Deploy your project and test it live.
+This approach revisits all key areas of Full Stack JavaScript while reinforcing hands-on skills. If you kept notes or bookmarks during your learning, use them for quick refreshers!
+
+Here’s a detailed plan for Day 1: JavaScript Fundamentals:
+
+Morning Session (2-3 hours)
+1. Core Concepts Review
+    • Scope and Closures
+        ◦ Watch a quick video or read documentation on JavaScript scopes (block, function, global).
+        ◦ Review closures and try simple examples:
+          javascript
+          Copier le code
+          function outer() {
+            let counter = 0;
+            return function inner() {
+              counter++;
+              console.log(counter);
+            };
+          }
+          const increment = outer();
+          increment(); // 1
+          increment(); // 2
+    • Practice: Solve 2-3 exercises related to closures and scopes on JavaScript.info or CodeWars.
+2. Promises and Async/Await
+    • Review:
+        ◦ The difference between promises and callbacks.
+        ◦ How to use .then, .catch, and .finally.
+        ◦ Async/await syntax.
+    • Example: Convert this into async/await:
+      javascript
+      Copier le code
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+        .then(response => response.json())
+        .then(data => console.log(data));
+    • Practice: Write 2-3 small scripts that fetch data from an API using async/await.
+
+Afternoon Session (2-3 hours)
+3. DOM Manipulation Basics
+    • Key Methods to Review:
+        ◦ document.querySelector, document.querySelectorAll.
+        ◦ Adding/removing classes with classList.
+        ◦ Event listeners: addEventListener.
+        ◦ Create elements dynamically with document.createElement.
+    • Example:
+      javascript
+      Copier le code
+      const button = document.querySelector('#myButton');
+      button.addEventListener('click', () => {
+        const newDiv = document.createElement('div');
+        newDiv.textContent = 'Hello, DOM!';
+        document.body.appendChild(newDiv);
+      });
+    • Practice:
+        ◦ Add interactivity to a static HTML page (e.g., add items to a list or toggle a class on click).
+4. Event Handling and Delegation
+    • Review how event delegation works with an example:
+      javascript
+      Copier le code
+      document.querySelector('#parent').addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+          console.log('Button clicked:', event.target.textContent);
+        }
+      });
+    • Create a small interactive UI feature using event delegation (e.g., a list where clicking items logs their text).
+
+Evening Session (1-2 hours)
+5. Practice Exercises
+    • Solve JavaScript challenges on platforms like:
+        ◦ CodeWars
+        ◦ LeetCode
+        ◦ HackerRank
+    • Focus Areas:
+        ◦ Array methods (map, filter, reduce).
+        ◦ String manipulation.
+        ◦ Object and array destructuring.
+6. Reflect
+    • Write a short summary of what you reviewed.
+    • Note down concepts or areas you struggled with for deeper focus tomorrow.
+
+### **Day 1: JavaScript Fundamentals**
+
+#### **Morning Session (2-3 hours)**
+1. **Core Concepts Review**:
+   - **Scope and Closures**:
+     - Review JavaScript scopes (block, function, global).
+     - Practice closures with examples like counter functions.
+       ```javascript
+       function outer() {
+         let counter = 0;
+         return function inner() {
+           counter++;
+           console.log(counter);
+         };
+       }
+       const increment = outer();
+       increment(); // 1
+       increment(); // 2
+       ```
+   - **Promises and Async/Await**:
+     - Review how promises work and convert `.then` chains to `async/await`.
+     - Example:
+       ```javascript
+       async function fetchData() {
+         const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+         const data = await response.json();
+         console.log(data);
+       }
+       fetchData();
+       ```
+
+#### **Afternoon Session (2-3 hours)**
+2. **DOM Manipulation**:
+   - Practice with `querySelector`, `classList`, and `addEventListener`.
+   - Example:
+     ```javascript
+     const button = document.querySelector('#myButton');
+     button.addEventListener('click', () => {
+       const newDiv = document.createElement('div');
+       newDiv.textContent = 'Hello, DOM!';
+       document.body.appendChild(newDiv);
+     });
+     ```
+3. **Event Delegation**:
+   - Implement event delegation for efficiency.
+   - Example:
+     ```javascript
+     document.querySelector('#parent').addEventListener('click', (event) => {
+       if (event.target.tagName === 'BUTTON') {
+         console.log('Button clicked:', event.target.textContent);
+       }
+     });
+     ```
+
+#### **Evening Session (1-2 hours)**
+4. **Practice Exercises**:
+   - Solve JavaScript challenges on CodeWars or LeetCode.
+   - Focus on array methods (`map`, `filter`, `reduce`) and string manipulation.
+
+---
+
+### **Day 2: Frontend Basics (HTML/CSS/JavaScript)**
+
+#### **Morning Session (2-3 hours)**
+1. **HTML and Semantic Elements**:
+   - Review semantic HTML (e.g., `<header>`, `<article>`, `<footer>`).
+   - Create a basic structure for a webpage.
+
+2. **CSS Grid and Flexbox**:
+   - Practice layout techniques for responsiveness.
+   - Example:
+     ```css
+     .container {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 10px;
+     }
+     ```
+
+#### **Afternoon Session (2-3 hours)**
+3. **Adding JavaScript to HTML**:
+   - Make a webpage interactive by manipulating DOM elements.
+   - Example: A button that toggles a dark mode class.
+     ```javascript
+     const toggleButton = document.querySelector('#toggle');
+     toggleButton.addEventListener('click', () => {
+       document.body.classList.toggle('dark-mode');
+     });
+     ```
+
+#### **Evening Session (1-2 hours)**
+4. **Mini-Project**:
+   - Create a responsive, interactive page (e.g., a simple form with validation).
+
+---
+
+### **Day 3: React**
+
+#### **Morning Session (2-3 hours)**
+1. **React Basics**:
+   - Review components, props, and state.
+   - Build a counter app.
+     ```javascript
+     import React, { useState } from 'react';
+
+     function Counter() {
+       const [count, setCount] = useState(0);
+       return (
+         <div>
+           <p>Count: {count}</p>
+           <button onClick={() => setCount(count + 1)}>Increment</button>
+         </div>
+       );
+     }
+     export default Counter;
+     ```
+
+#### **Afternoon Session (2-3 hours)**
+2. **Hooks**:
+   - Focus on `useEffect` and `useState`.
+   - Example: Fetch data from an API on component mount.
+
+3. **React Router**:
+   - Practice routing between pages.
+
+#### **Evening Session (1-2 hours)**
+4. **Mini-Project**:
+   - Build a React app that fetches and displays data from an API.
+
+---
+
+### **Day 4: Node.js and Express**
+
+#### **Morning Session (2-3 hours)**
+1. **Basics of Express**:
+   - Create a simple API.
+     ```javascript
+     const express = require('express');
+     const app = express();
+
+     app.get('/api', (req, res) => {
+       res.send({ message: 'Hello, World!' });
+     });
+
+     app.listen(3000, () => console.log('Server running on port 3000'));
+     ```
+
+#### **Afternoon Session (2-3 hours)**
+2. **Middleware**:
+   - Practice writing custom middleware for logging requests.
+
+3. **API Testing**:
+   - Use Postman or cURL to test endpoints.
+
+#### **Evening Session (1-2 hours)**
+4. **Mini-Project**:
+   - Build a small API for user data (CRUD operations).
+
+---
+
+### **Day 5: Databases**
+
+#### **Morning Session (2-3 hours)**
+1. **Database Basics**:
+   - Review relational vs. non-relational databases.
+   - Write basic SQL queries (SELECT, INSERT, UPDATE, DELETE).
+
+#### **Afternoon Session (2-3 hours)**
+2. **Prisma**:
+   - Practice creating models and performing CRUD operations.
+
+#### **Evening Session (1-2 hours)**
+3. **Mini-Project**:
+   - Build a database schema for a simple app and connect it to Express.
+
+---
+
+### **Day 6: Deployment and Tools**
+
+#### **Morning Session (2-3 hours)**
+1. **Git and GitHub**:
+   - Practice commands like branching, merging, and pull requests.
+
+2. **Hosting**:
+   - Deploy a project to Heroku or Vercel.
+
+#### **Afternoon Session (2-3 hours)**
+3. **CI/CD Basics**:
+   - Set up GitHub Actions for automated deployment.
+
+#### **Evening Session (1-2 hours)**
+4. **Project Review**:
+   - Ensure your app is live and functional.
+
+---
+
+### **Day 7: Integrative Project**
+
+#### **All Day (6-8 hours)**
+1. **Rebuild a Full-Stack Project**:
+   - Choose a project from The Odin Project (e.g., a blog or social media clone).
+   - Focus on:
+     - Building a responsive frontend.
+     - Creating a robust backend with APIs.
+     - Connecting to a database for persistent storage.
+
+2. **Testing**:
+   - Write unit tests for your backend and frontend components.
+
+3. **Deploy and Test**:
+   - Push your final project live and test all functionality.
+
+---
+

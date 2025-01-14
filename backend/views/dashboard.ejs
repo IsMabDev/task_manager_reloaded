@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+</head>
+<body>
+      <h1>Dashboard</h1>
+      
+      <p><a href="/users">Users</a></p>
+      <button type="submit" id="createTask" >create task</button>
+
+      <p><a href="/tasks">Tasks</a></p>
+      <% if (typeof tasks !=='undefined' && tasks) { %>
+        <% tasks.forEach((task)=> { %>
+          <p><a href="/tasks/<%=task.id%>">
+              <p>task id: <%=task.id%> </a> // task title: <%=task.title%></p>
+             
+          <% }) %>
+            <% } %>
+      <p><a href="/logout">Sign-out</a></p>
+      
+</body>
+</html>
