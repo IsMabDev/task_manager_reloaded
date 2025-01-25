@@ -1,0 +1,92 @@
+/* App.css */
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background-color: #2d3748; /* Chakra gray.800 */
+  color: white;
+  text-align: center;
+  padding: 16px;
+}
+
+/* Main Content Styles */
+.main-content {
+  display: flex;
+  flex: 1;
+  max-width: 1000px;
+  margin: 24px auto;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.form-section {
+  flex: 1;
+  background-color: #f7fafc; /* Chakra gray.50 */
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-heading {
+  color: #2d3748; /* Chakra gray.700 */
+  margin-bottom: 24px;
+}
+
+.form-input {
+  border: 1px solid #cbd5e0; /* Chakra gray.300 */
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.form-input:focus {
+  border-color: #48bb78; /* Chakra green.400 */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.5);
+}
+
+.form-button {
+  background-color: #48bb78; /* Chakra green.400 */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #38a169; /* Chakra green.500 */
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  background-image: url('https://via.placeholder.com/500');
+  background-position: center;
+  background-size: cover;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #2d3748; /* Chakra gray.800 */
+  color: white;
+  text-align: center;
+  padding: 16px;
+}
