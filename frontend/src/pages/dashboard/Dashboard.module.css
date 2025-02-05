@@ -1,0 +1,103 @@
+.container{
+  border: 1px solid red;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: min(1rem, 1vw);
+}
+.header{
+  padding: min(50px, 5vw);
+  background-color:#fff;
+  width: 100%;
+  height: min(20%,100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:2vw
+}
+
+.header h1{
+  width: 40vw;
+  margin:0 auto;
+  padding:0;
+  color: #000;}
+
+.header input{
+  width: 20vw;
+  border: 2px solid #eee;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.header img{
+  width: min(50px, 10vw);
+  height: min(40px,10vw);
+  border-radius: 50%;
+}
+
+.header h4{
+  font-size:min(0.5rem, 2vw);
+  width: 20vw;
+  text-wrap: wrap;
+}
+
+.content{ 
+  background-color: #eee;
+  flex:1;
+  overflow: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.content .sidebar{
+  background-color: #000;
+  color: white;
+  height: 100%;
+  width: 20%;
+  padding:1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top:10vh;
+  overflow: auto;
+
+}
+
+.content .sidebar ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.content .taskList{
+  width: 100%;
+  display: flex ;
+  flex-direction: column;
+  }
+
+.taskList ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}

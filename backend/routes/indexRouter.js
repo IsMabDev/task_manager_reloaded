@@ -6,7 +6,7 @@ const { ensureAuthenticated } = require('../configs/passportJSConfig')
 
 router.get("/", (req, res) => res.render("index"));
 router.get("/index", (req, res) => res.render("index"));
-router.get('/sign-up', (req, res) => res.render('sign-up'));
+// router.get('/sign-up', (req, res) => res.render('sign-up'));
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
   res.render('dashboard')
 });
@@ -14,13 +14,20 @@ router.post('/sign-up',userController.createUser)
 router.get('/login', (req, res) => res.render('login'));
 router.post(
   "/login",
-  passport.authenticate("local", {
-    failureRedirect: "/login",
-    successRedirect: '/dashboard',
-    successFlash: "Welcome back!",
-    failureFlash: "Invalid username or password.",
+  (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      if (err) return next(err);
+      if (!user) {
+        return res.status(401).json({ message: info.message }); // Login failed
+      }
+      req.logIn(user, (err) => {
+        if (err) return next(err);
+        res.json({ message: 'Login successful', user }); // Login succeeded
+      });
+    })(req, res, next);
   })
-);
+    
+
 
 router.get("/logout", (req, res) => {
   req.logout((err) => {

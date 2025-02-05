@@ -1,10 +1,11 @@
 // import React from 'react';
 import './App.css';
-import { ChakraProvider, Box, Flex, Heading, Input, Button, Text } from '@chakra-ui/react';
+import {  Box, Flex, Heading, Input, Button, Text } from '@chakra-ui/react';
+import  {Provider}  from "@/components/ui/provider.jsx"
 
 function App() {
     return (
-        <ChakraProvider>
+        <Provider>
             <Flex direction="column" minH="100vh" className="app-container">
                 {/* Header */}
                 <Box as="header" className="header">
@@ -59,7 +60,7 @@ function App() {
                     <Text>&copy; 2025 Your Website. All Rights Reserved.</Text>
                 </Box>
             </Flex>
-        </ChakraProvider>
+        </Provider>
     );
 }
 

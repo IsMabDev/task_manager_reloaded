@@ -7,7 +7,7 @@ exports.getAllTasks = async (req, res) => {
 
   const tasks = await taskModel.getAllTasks(req.user.id);
   
-  res.render('dashboard', { tasks });
+  res.json(tasks);
 
 }
 

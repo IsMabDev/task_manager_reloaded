@@ -12,6 +12,14 @@ app.use(flash());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
+const cors = require("cors"); 
+
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Frontend URL
+    credentials: true, // Allow credentials (cookies)
+  })
+);
 const usersRoutes = require("./routes/usersRouter");
 const indexRouter = require("./routes/indexRouter");
 const tasksRouter = require("./routes/tasksRouter");
