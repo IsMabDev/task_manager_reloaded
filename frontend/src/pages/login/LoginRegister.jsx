@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "@/utils/api";
+import api from "@/utils/api/api";
 import logoImage from "@/assets/logo.jpg";
 // import "@/globals.css"
 import styles from "./LoginRegister.module.css";

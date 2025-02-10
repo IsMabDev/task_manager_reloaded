@@ -5,9 +5,12 @@ export type Task = {
   description?: string;
   category?: number;
   user: number;
-  status: "todo" | "in progress" | "done";
+  status: Status;
   dueDate?: Date;
 }
+
+export type Status= "todo" | "in progress" | "done";
+
 export const tasks : Task[] = [
   {id: 1, title: "Task 1", description: "Task 2 description", category: 1, user: 1,status: "done", dueDate: new Date()},
   {id: 2, title: "Task 2", category: 1, user: 1,status: "todo", dueDate: new Date()},

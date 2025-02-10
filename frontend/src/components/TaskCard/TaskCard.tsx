@@ -1,16 +1,14 @@
-import PropTypes from "prop-types";
-// import styles from "./TaskCard.module.css";
 import "@/globals.css"
 import React, { useState } from "react";
-import {Task} from "@/pages/tests/tasks"
+import {Status, Task} from "../../utils/tasksUtils/tasksTypeAndDB"
 
 
-const TaskCard = ({ initialTask, handleChangeStatus }:{task:Task, handleChangeStatus: (event: React.ChangeEvent<HTMLSelectElement>, status:string) => void}) => {
+const TaskCard = ({ initialTask, handleChangeStatus }:{initialTask:Task, handleChangeStatus: (id:number,status:Status) => void}) => {
   
   const [isEditing, setIsEditing] = useState(false);
-  const [task, setTask] = useState({ ...initialTask });
+  const [task, setTask] = useState<Task>({ ...initialTask });
   const handleChangeStatusCard = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    handleChangeStatus(task.id, event.target.value);
+    handleChangeStatus(task.id, event.target.value as Status);
   }
   function updateTitle(event: React.ChangeEvent<HTMLInputElement>): void {
     const newTitle = event.target.value;
@@ -22,7 +20,7 @@ const TaskCard = ({ initialTask, handleChangeStatus }:{task:Task, handleChangeSt
   
   <div 
   draggable
-  onDragStart={(e) => {e.dataTransfer.setData("text/plain", task.id)}}
+  onDragStart={(e) => {e.dataTransfer.setData("text/plain",(task.id).toString())}}
   className="cardContent  flex flex-col  justify-between h-full bg-green-100 border rounded px-2" >
     {isEditing? <input title="title" className="titleCard  font-bold text-sm self-center" type="text" value={task.title} onChange={updateTitle} 
     onBlur={()=>{setIsEditing(false)}}/> :
