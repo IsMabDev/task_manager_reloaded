@@ -81,10 +81,36 @@ const taskModel = {
           id: parseInt(id),
         },
       },
-    });
+    }); 
     return tasks;
   },
+  createFakeTasks: async (userId,categoryId) => {
+    const tasks = await prisma.task.createMany({
+      data: [
+        {
+          title: 'Task 1',
+          description: 'Description 1',
+          userId: userId,
+          categoryId: categoryId,
+        },
+        {
+          title: 'Task 2',
+          description: 'Description 2',
+          userId: userId,
+          categoryId: categoryId,
+        },
+        {
+          title: 'Task 3',
+          description: 'Description 3',
+          userId: userId,
+          categoryId: categoryId,
+        },
+      ],
+      }    
+    ); 
+  return tasks;
+  },
 };
-
+taskModel.createFakeTasks(3,3)
 
 module.exports = taskModel;

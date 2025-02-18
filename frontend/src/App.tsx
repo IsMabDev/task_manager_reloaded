@@ -2,9 +2,14 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import LoginRegister from "./pages/login/LoginRegister";
 import Dashboard from "./components/dashboard/Dashboard";
 import React from "react";
+import { QueryClient } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
+
+export const queryClient = new QueryClient();
 
 
 const App = () => (
+  <QueryClientProvider client={queryClient}>
 
   <Router>
     <Routes>
@@ -14,6 +19,8 @@ const App = () => (
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   </Router>
+  </QueryClientProvider>
+
 );
 
 export default App;

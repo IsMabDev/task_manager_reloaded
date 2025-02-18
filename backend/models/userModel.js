@@ -60,26 +60,32 @@ const deleteUser = async (id) => {
 const createFakeUsers = async () => {
   const users = await prisma.user.createMany({
     data: [
-      {
-        name: 'Bob',
-        email: 'a@b.com',
-        password: '1234'
+      { id: 1,
+        name: 'qsdf',
+        email: 'qsdf@gmail.com',
+        password: 'qsdf'
       },
       {
-        name: 'John',
-        email: 'b@c.com',
-        password: '1234'
+        id: 2,
+        name: 'qsdf2',
+        name: 'qsdf2',
+        email: 'qsdf2@gmail.com',
+        password: 'qsdf'
       },
       {
-        name: 'Jane',
-        email: 'c@d.com',
-        password: '1234'
-      }
+        id: 3,
+        name: 'qsdf3',
+        name: 'qsdf',
+        email: 'qsdf3@gmail.com',
+        password: 'qsdf'
+      },
     ]
   })
+
+
   return users
 } 
-
+// createFakeUsers()
 module.exports = {
   getAllUsers,
   getUserbyId,

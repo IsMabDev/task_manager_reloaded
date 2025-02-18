@@ -9,7 +9,12 @@ export type Task = {
   dueDate?: Date;
 }
 
-export type Status= "todo" | "in progress" | "done";
+// Create an array with 'as const' to preserve literal types
+export const statusValues = ["todo", "in progress", "done"] as const;
+
+// Derive the Status union type from this array
+export type Status = typeof statusValues[number];
+
 
 export const tasks : Task[] = [
   {id: 1, title: "Task 1", description: "Task 2 description", category: 1, user: 1,status: "done", dueDate: new Date()},

@@ -1,11 +1,12 @@
 import "@/globals.css"
 import React, { useState } from "react";
 import SideBar from "./SideBar";
-import TasksContainer from "../TasksContainer";
+import TasksContainer from "./Tasks/TasksContainer";
 import HeaderBar  from "./HeaderBar";
+import CategoriesContainer from "./Categories/CategoriesContainer";
 
 const Dashboard = () => {
-  const [activeSection, setActiveSection] = useState("tasks");
+  const [activeSection, setActiveSection] = useState("categories");
   const renderContent = () => {
     switch (activeSection) {
       case "tasks":
@@ -13,7 +14,7 @@ const Dashboard = () => {
       case "teams":
         return <div>Teams</div>;
       case "categories":
-        return <div>Categories</div>;
+        return <CategoriesContainer />
       
       default:
         return <div>Please select a section in the sidebar</div>;
@@ -22,7 +23,7 @@ const Dashboard = () => {
   return (
     <div className="globalContainer flex wlex-wrap flex-col h-screen "> 
       <HeaderBar />
-      <div className="sideBarContentListContainer flex bg-amber-100 flex-1">
+      <div className="sideBarContentListContainer flex  flex-1">
         <SideBar setActiveSection={setActiveSection}/>
         {renderContent()}        
       </div>

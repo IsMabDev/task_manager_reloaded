@@ -64,7 +64,26 @@ const categoryModel = {
     });
     console.log(`Default category created for user ${userId}.`);
   }
-})
-};  
+}),
+createFakeCategories: asyncHandler(async () => {
+  await prisma.category.createMany({
+    data: [
+      { title: 'Uncategorized', userId:3, isDefault: true }, 
+      { title: 'cat1',color: 'red', userId:3, isDefault: false },
+      { title: 'cat2',color: 'blue', userId:3, isDefault: false },
+      { title: 'cat3',color: 'green', userId:3, isDefault: false },
+      { title: 'cat4',color: 'yellow',userId:3,  isDefault: false }, 
+          ],
+  });
+  console.log('Fake categories created.');
+
+}
+)  
+
+}
+// categoryModel.createFakeCategories()
+
+
+
 
 module.exports = categoryModel

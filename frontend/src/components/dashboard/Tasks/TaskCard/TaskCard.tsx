@@ -1,6 +1,6 @@
 import "@/globals.css"
 import React, { useState } from "react";
-import {Status, Task} from "../../utils/tasksUtils/tasksTypeAndDB"
+import {Status, Task} from "../../../../utils/tasksUtils/tasksTypeAndDB"
 
 
 const TaskCard = ({ initialTask, handleChangeStatus }:{initialTask:Task, handleChangeStatus: (id:number,status:Status) => void}) => {
@@ -21,7 +21,7 @@ const TaskCard = ({ initialTask, handleChangeStatus }:{initialTask:Task, handleC
   <div 
   draggable
   onDragStart={(e) => {e.dataTransfer.setData("text/plain",(task.id).toString())}}
-  className="cardContent  flex flex-col  justify-between h-full bg-green-100 border rounded px-2" >
+  className="cardContent  flex flex-col  justify-between h-full bg-gray-200 w-50  border rounded px-2" >
     {isEditing? <input title="title" className="titleCard  font-bold text-sm self-center" type="text" value={task.title} onChange={updateTitle} 
     onBlur={()=>{setIsEditing(false)}}/> :
     <h3 

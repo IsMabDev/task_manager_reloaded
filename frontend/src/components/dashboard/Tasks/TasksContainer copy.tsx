@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {tasks as localTasks, Status, Task } from "../utils/tasksUtils/tasksTypeAndDB";
-import TaskList  from '../components/TaskList/TaskList';
+import {tasks as localTasks, Status, Task } from "../../../utils/tasksUtils/tasksTypeAndDB";
+import TaskList  from '../Tasks/TaskList/TaskList';
 import { useNavigate } from "react-router-dom";
-import api from "../utils/api/api";
-import {sortTasksByDate} from "../utils/tasksUtils/tasksUtils";
+import api from "../../../utils/api/api";
+import {sortTasksByDate} from "../../../utils/tasksUtils/tasksUtils";
 function TasksContainer() {
 
   const getTasksFromApi= ()=>{
@@ -65,8 +65,8 @@ const getTasksFromFile = async () => {
     setTasks(updatedTasks);
   }
   useEffect(() => {
-    // getTasksFromApi();
-    getTasksFromFile();
+    getTasksFromApi();
+    // getTasksFromFile();
       
     
   }, []);

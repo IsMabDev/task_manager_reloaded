@@ -28,7 +28,7 @@ model Task {
   id          Int       @id @default(autoincrement())
   title       String    
   description String?   
-  status      String    @default("pending") // E.g., pending, completed
+  status      String    @default("in progress") // E.g., pending, completed
   dueDate     DateTime?
   user        User      @relation(fields: [userId], references: [id])
   userId      Int
@@ -46,5 +46,6 @@ model Category{
   tasks       Task[]      
   createdAt   DateTime   @default(now())
   isDefault   Boolean   @default(false)
+  color       String    @default("#fff")
 
 }
